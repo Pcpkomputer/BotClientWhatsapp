@@ -3,6 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 import time
 import pyautogui as auto
 
@@ -21,9 +22,8 @@ finally:
             ez = driver.find_element(By.CLASS_NAME, '_1EFSv')
             ez.click()
             
-            x = driver.find_elements(By.CLASS_NAME,"_3FRCZ")[1]
-            x.click()
-          
+            
+
             for x in element:
                 time.sleep(1)
                 x.click()
@@ -34,8 +34,11 @@ finally:
                 ele = pop[len(pop)-1].find_element(By.CLASS_NAME, "eRacY")
                 ew = ele.find_elements(By.TAG_NAME,"span")[1]
                 print(ew.get_attribute("innerText"))
-                auto.write("asdkasodksakdsad")
-                auto.press("enter")
+                eyo = driver.find_elements(By.CLASS_NAME,"_3FRCZ")[1]
+                eyo.click()
+                eyo.clear()
+                eyo.send_keys("ulalala")
+                eyo.send_keys(Keys.ENTER)
         except Exception as e:
             print(e)
             pass
